@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<link rel="stylesheet" href="./首页.css" />
+	</head>
+	<body>
+		<div>
+			<header>
+				<div class="logo">
+					<h1><img src="./图像/logo.png" alt="LOGO" /></h1>
+					<i>重庆旅游网</i>
+					<p class="cq"><em>Chongqing&nbsp;Travel</em></p>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="./联系我们.html">联系我们</a></li>
+						<li><a href="./景区预定.html">景区预定</a></li>
+						<li><a href="./新闻资讯.html">新闻资讯</a></li>
+						<li><a href="./旅游攻略.html">旅游攻略</a></li>
+						<li><a href="./乐游区县.html">乐游区县</a></li>
+						<li><a href="./乐游主城.html">乐游主城</a></li>
+						<li><a href="./历史简介.html">历史简介</a></li>
+						<li><a href="http://www.cqtours.cn">首页</a></li>
+						<div class="bar"></div>
+						<!-- <div class="tris"></div> -->
+					</ul>
+					<!-- <div class="logo2">重庆旅游网</div> -->
+				</nav>
+			</header>
+		</div>
+		<div class="slider">
+			<div class="slides">
+				<img src="./图像/重庆洪崖洞.jpg" alt="Image 1" />
+				<img id="image" src="./图像/朝天门.jpg" alt="Image 2" />
+				<img id="image2" src="./图像/大会堂.jpg" alt="Image 3" />
+				<img id="image3" src="./图像/吊桥.jpg" alt="Image 4" />
+				<img id="image4" src="./图像/高山.jpg" alt="Image 1"/>
+			</div>
+			<button class="lt">&lt;</button>
+			<button class="gt" onclick="nextImage()">&gt;</button>
+		</div>
+		<script>
+			// script.js
+			window.addEventListener('load', function() {
+			  const slides = document.querySelector('.slides');
+			  let currentIndex = 0;
+			  const totalImages = slides.children.length;
+			
+			  function nextImage() {
+			    currentIndex = (currentIndex + 1) % totalImages;
+			    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+			  }
+			
+			  setInterval(nextImage, 5000); // 每5秒滚动到下一张图片
+			});
+		</script>
+		
+		
+	</body>
+</html>
